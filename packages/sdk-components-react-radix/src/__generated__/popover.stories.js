@@ -1,0 +1,53 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Popover = void 0;
+var sdk_components_react_1 = require("@webstudio-is/sdk-components-react");
+var components_1 = require("../components");
+var Component = function () {
+  return (
+    <sdk_components_react_1.Box className={"w-box"}>
+      <components_1.Popover>
+        <components_1.PopoverTrigger>
+          <sdk_components_react_1.Button className={"w-button w-button-1"}>
+            {"Button"}
+          </sdk_components_react_1.Button>
+        </components_1.PopoverTrigger>
+        <components_1.PopoverContent
+          className={"w-popover-content w-popover-content-1"}
+        >
+          <sdk_components_react_1.Text className={"w-text"}>
+            {"The text you can edit"}
+          </sdk_components_react_1.Text>
+          <components_1.PopoverClose
+            className={"w-close-button w-close-button-1"}
+          >
+            <sdk_components_react_1.HtmlEmbed
+              code={
+                '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" width="100%" height="100%" style="display: block;"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" d="M12.5 3 3 12.5M3 3l9.5 9.5"/></svg>'
+              }
+              className={"w-html-embed"}
+            />
+          </components_1.PopoverClose>
+        </components_1.PopoverContent>
+      </components_1.Popover>
+    </sdk_components_react_1.Box>
+  );
+};
+exports.default = {
+  title: "Components/Popover",
+};
+var Story = {
+  render: function () {
+    return (
+      <>
+        <style>
+          {
+            "\n@media all {\n  :where(div.w-box) {\n    box-sizing: border-box;\n    border-top-width: 1px;\n    border-right-width: 1px;\n    border-bottom-width: 1px;\n    border-left-width: 1px;\n    outline-width: 1px\n  }\n  :where(address.w-box) {\n    box-sizing: border-box;\n    border-top-width: 1px;\n    border-right-width: 1px;\n    border-bottom-width: 1px;\n    border-left-width: 1px;\n    outline-width: 1px\n  }\n  :where(article.w-box) {\n    box-sizing: border-box;\n    border-top-width: 1px;\n    border-right-width: 1px;\n    border-bottom-width: 1px;\n    border-left-width: 1px;\n    outline-width: 1px\n  }\n  :where(aside.w-box) {\n    box-sizing: border-box;\n    border-top-width: 1px;\n    border-right-width: 1px;\n    border-bottom-width: 1px;\n    border-left-width: 1px;\n    outline-width: 1px\n  }\n  :where(figure.w-box) {\n    box-sizing: border-box;\n    border-top-width: 1px;\n    border-right-width: 1px;\n    border-bottom-width: 1px;\n    border-left-width: 1px;\n    outline-width: 1px\n  }\n  :where(footer.w-box) {\n    box-sizing: border-box;\n    border-top-width: 1px;\n    border-right-width: 1px;\n    border-bottom-width: 1px;\n    border-left-width: 1px;\n    outline-width: 1px\n  }\n  :where(header.w-box) {\n    box-sizing: border-box;\n    border-top-width: 1px;\n    border-right-width: 1px;\n    border-bottom-width: 1px;\n    border-left-width: 1px;\n    outline-width: 1px\n  }\n  :where(main.w-box) {\n    box-sizing: border-box;\n    border-top-width: 1px;\n    border-right-width: 1px;\n    border-bottom-width: 1px;\n    border-left-width: 1px;\n    outline-width: 1px\n  }\n  :where(nav.w-box) {\n    box-sizing: border-box;\n    border-top-width: 1px;\n    border-right-width: 1px;\n    border-bottom-width: 1px;\n    border-left-width: 1px;\n    outline-width: 1px\n  }\n  :where(section.w-box) {\n    box-sizing: border-box;\n    border-top-width: 1px;\n    border-right-width: 1px;\n    border-bottom-width: 1px;\n    border-left-width: 1px;\n    outline-width: 1px\n  }\n  :where(button.w-button) {\n    font-family: inherit;\n    font-size: 100%;\n    line-height: 1.15;\n    box-sizing: border-box;\n    border-top-width: 1px;\n    border-right-width: 1px;\n    border-bottom-width: 1px;\n    border-left-width: 1px;\n    border-top-style: solid;\n    border-right-style: solid;\n    border-bottom-style: solid;\n    border-left-style: solid;\n    text-transform: none;\n    margin: 0\n  }\n  :where(div.w-html-embed) {\n    display: contents;\n    white-space: normal;\n    white-space-collapse: collapse\n  }\n  :where(div.w-text) {\n    box-sizing: border-box;\n    border-top-width: 1px;\n    border-right-width: 1px;\n    border-bottom-width: 1px;\n    border-left-width: 1px;\n    outline-width: 1px;\n    min-height: 1em\n  }\n  :where(button.w-close-button) {\n    background-color: transparent;\n    background-image: none;\n    font-family: inherit;\n    font-size: 100%;\n    line-height: 1.15;\n    box-sizing: border-box;\n    text-transform: none;\n    border: 1px solid rgba(226, 232, 240, 1);\n    margin: 0;\n    padding: 0px\n  }\n  :where(div.w-popover-content) {\n    box-sizing: border-box;\n    border-top-width: 1px;\n    border-right-width: 1px;\n    border-bottom-width: 1px;\n    border-left-width: 1px;\n    outline-width: 1px\n  }\n}\n@media all {\n  .w-button-1 {\n    display: inline-flex;\n    align-items: center;\n    justify-content: center;\n    background-color: rgba(255, 255, 255, 1);\n    border-top-left-radius: 0.375rem;\n    border-top-right-radius: 0.375rem;\n    border-bottom-right-radius: 0.375rem;\n    border-bottom-left-radius: 0.375rem;\n    font-size: 0.875rem;\n    line-height: 1.25rem;\n    font-weight: 500;\n    height: 2.5rem;\n    padding-top: 0.5rem;\n    padding-right: 1rem;\n    padding-bottom: 0.5rem;\n    padding-left: 1rem;\n    border: 1px solid rgba(226, 232, 240, 1)\n  }\n  .w-button-1:disabled {\n    pointer-events: none;\n    opacity: 0.5\n  }\n  .w-button-1:focus-visible {\n    outline-offset: 2px;\n    box-shadow: 0 0 0 2px rgba(255, 255, 255, 1), 0 0 0 calc(2px + 2px) rgba(148, 163, 184, 1);\n    outline: 2px solid transparent\n  }\n  .w-button-1:hover {\n    background-color: rgba(241, 245, 249, 1);\n    color: rgba(15, 23, 42, 1)\n  }\n  .w-popover-content-1 {\n    z-index: 50;\n    width: 18rem;\n    border-top-left-radius: 0.375rem;\n    border-top-right-radius: 0.375rem;\n    border-bottom-right-radius: 0.375rem;\n    border-bottom-left-radius: 0.375rem;\n    background-color: rgba(255, 255, 255, 1);\n    color: rgba(2, 8, 23, 1);\n    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);\n    outline: medium none currentcolor;\n    border: 1px solid rgba(226, 232, 240, 1);\n    padding: 1rem\n  }\n  .w-close-button-1 {\n    position: absolute;\n    right: 1rem;\n    top: 1rem;\n    border-top-left-radius: 0.125rem;\n    border-top-right-radius: 0.125rem;\n    border-bottom-right-radius: 0.125rem;\n    border-bottom-left-radius: 0.125rem;\n    opacity: 0.7;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    height: 1rem;\n    width: 1rem;\n    background-color: transparent;\n    outline: medium none currentcolor;\n    border: 0 none currentcolor\n  }\n  .w-close-button-1:focus-visible {\n    box-shadow: 0 0 0 2px rgba(255, 255, 255, 1), 0 0 0 calc(2px + 2px) rgba(148, 163, 184, 1)\n  }\n  .w-close-button-1:hover {\n    opacity: 1\n  }\n}\n      "
+          }
+        </style>
+        <Component />
+      </>
+    );
+  },
+};
+exports.Popover = Story;

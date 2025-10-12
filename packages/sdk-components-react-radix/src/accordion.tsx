@@ -6,6 +6,7 @@ import {
   type RefAttributes,
   useState,
   useEffect,
+  createElement,
 } from "react";
 import {
   Root,
@@ -14,7 +15,10 @@ import {
   Trigger,
   Content,
 } from "@radix-ui/react-accordion";
-import { getIndexWithinAncestorFromProps } from "@webstudio-is/sdk/runtime";
+import {
+  getIndexWithinAncestorFromProps,
+  getTagFromProps,
+} from "@webstudio-is/sdk/runtime";
 import { getClosestInstance, type Hook } from "@webstudio-is/react-sdk/runtime";
 
 export const Accordion = forwardRef<
@@ -47,10 +51,28 @@ export const AccordionItem = forwardRef<
   return <Item ref={ref} value={value ?? index ?? ""} {...props} />;
 });
 
-export const AccordionHeader: ForwardRefExoticComponent<
-  Omit<ComponentProps<typeof Header>, "asChild"> &
-    RefAttributes<HTMLHeadingElement>
-> = Header;
+type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
+type AccordionHeaderProps = Omit<ComponentProps<typeof Header>, "asChild"> & {
+  tag?: HeadingTag;
+};
+
+const defaultHeadingTag: HeadingTag = "h3";
+
+export const AccordionHeader = forwardRef<
+  HTMLHeadingElement,
+  AccordionHeaderProps
+>(({ tag: legacyTag, children, ...headerProps }, ref) => {
+  const tag =
+    (getTagFromProps(headerProps) as HeadingTag | undefined) ??
+    legacyTag ??
+    defaultHeadingTag;
+  return (
+    <Header asChild={true} ref={ref} {...headerProps}>
+      {createElement(tag, undefined, children)}
+    </Header>
+  );
+});
 
 export const AccordionTrigger: ForwardRefExoticComponent<
   Omit<ComponentProps<typeof Trigger>, "asChild"> &
